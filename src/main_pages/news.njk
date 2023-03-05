@@ -1,0 +1,14 @@
+---
+title: News
+---
+
+
+<div class = "grid">
+{% for article in collections.news %}
+    <a class = "card" href = "{{ article.url }}" style="max-width:360px">
+    <h2>{{ article.data.title }}</h2>
+    {% image article.data.image, "News image", sizes="25vw" %}
+    <p><i>{{ article.date | postDate }}</i></p>
+    </a>   
+{% endfor %}
+</div>

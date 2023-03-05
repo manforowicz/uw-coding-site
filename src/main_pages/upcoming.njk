@@ -1,0 +1,13 @@
+---
+title: Upcoming Events
+---
+
+<div class = "grid">
+{% for article in upcoming | reverse %}
+    <div class = card>
+    <h2>{{ article.title }}</h2>
+    <p><i>{{ article.date | postDate }}</i></p> 
+    <p>{{ article.description }}</p>
+    </div>
+{% endfor %}
+</div>

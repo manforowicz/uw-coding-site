@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+
+<body>
+
+    <div class=banner>
+        {% image "keyboard.jpg", "Banner photo", sizes="100vw" %}
+        <h1>{{ title | safe }}</h1>
+    </div>
+
+    <ul class = "nav-bar">
+        <li>
+            <a{% if page.url == "/" %} class=active {% endif %} href = "/">
+            {% image "logo.webp", "Logo", sizes="5vw" %}
+            </a>
+        </li>
+        {% for main in collections.main_pages %}
+        {% if loop.index0 != 0 %}
+        <li>
+            <a{% if page.url == main.url %} class=active {% endif %} href = {{main.url}}>{{main.data.title}}</a>
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+    <main>
+        {{ content | safe}}
+    </main>
+
+    <footer><p>Website by Marcin Anforowicz</p></footer>
+
+</body>
+</html>

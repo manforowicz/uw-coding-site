@@ -1,0 +1,17 @@
+---
+title: Members
+---
+
+<h2>Admin:</h2>
+
+<div class = "grid">
+{% for member in members %}
+    
+    {% if member.url %}<a class="card" href = "{{ member.url }}"  style="max-width:170px">{% else %}<div class = "card"  style="max-width:170px">{% endif %}
+    {% image member.image, "Member photograph", sizes="15vw" %}
+    <h2>{{ member.name }}</h2>
+    <p><i>{{ member.position }}</i></p>
+    {% if member.url %}</a>{% else %}</div>{% endif %} 
+    
+{% endfor %}
+</div>
