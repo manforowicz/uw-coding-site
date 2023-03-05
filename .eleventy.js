@@ -22,8 +22,9 @@ const { DateTime } = require("luxon");
 module.exports = function (eleventyConfig) {
     eleventyConfig.addAsyncShortcode("image", imageShortcode);
 
-    eleventyConfig.addWatchTarget('src/style.scss');
-    eleventyConfig.setWatchThrottleWaitTime(200);
+    eleventyConfig.addWatchTarget("public/style.css");
+
+    eleventyConfig.addPassthroughCopy("src/favicon.ico");
 
     eleventyConfig.addFilter("postDate", (dateObj) => {
       return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
