@@ -22,7 +22,7 @@
             </a>
         </li>
         {% for main in collections.main_pages %}
-        {% if loop.index0 != 0 %}
+        {% if main.url != "/" %}
         <li>
             <a{% if page.url == main.url %} class=active {% endif %} href = {{main.url}}>{{main.data.title}}</a>
         </li>
