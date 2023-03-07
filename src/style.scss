@@ -101,11 +101,14 @@ footer p {
 .banner img {
     margin: 0;
     border-radius: 0;
-    width: max(100%, 1200px);
+    min-width: 100%;
+    min-height: 500px;
+    width: auto;
+    height: auto;
 }
 
 .banner h1 {
-    top: max(140px, 30%);
+    top: max(260px, 30%);
     left: 0px;
     right: 0px;
     position: absolute;

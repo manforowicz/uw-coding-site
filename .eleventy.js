@@ -22,7 +22,7 @@ const { DateTime } = require("luxon");
 module.exports = function (eleventyConfig) {
     eleventyConfig.addAsyncShortcode("image", imageShortcode);
 
-    eleventyConfig.addWatchTarget("public/style.css");
+    eleventyConfig.addWatchTarget("src/style.scss");
 
     eleventyConfig.addPassthroughCopy("src/favicon.ico");
 
